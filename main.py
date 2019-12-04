@@ -24,6 +24,7 @@ import logging
 from googleapiclient.discovery import build
 from flask import Flask, render_template, request, json
 import google.auth
+import requests
 
 app = Flask(__name__)
 
@@ -97,7 +98,14 @@ def format_response(event):
         text = 'Thanks for adding me to a DM, {}!'.format(sender_name)
 
     elif event_type == 'MESSAGE':
-        text = 'Your message, {}: "{}"'.format(sender_name, event['message']['text'])
+        sent = slackOrIRC(event['message']['text'])
+        if sent[0]:
+            if sent[1]:
+                text = 'Thanks for engaging! Your message to {0} has been sent successfully!'.format(sent[2])
+            else:
+                text = 'Thanks for engaging! For some reason I couldn\'t send your message to {0}.\nPlease try again!'.format(sent[2])
+        else:
+            text = 'Sorry, this bot is limited to sending messages to irc or slack! Please specify which one of those you\'d like to send a message in before a newline and your message!'
 
     response = {'text': text}
 
@@ -110,6 +118,31 @@ def format_response(event):
     return response
 
 # [END async-bot]
+
+
+def slackOrIrc(message):
+    # We will send back a list called sent
+    # sent = [Bool1, Bool2, String]
+    # Bool1 = Whether they specified irc or slack
+    # Bool2 = If the message was sent successfully or not
+    # String = irc or slack
+    if ' irc\n' in message.lower():
+        sent = [True, False, "irc"]
+    elif ' slack\n' in message.lower():
+        sent = [True, False, "slack"]
+    else:
+        sent = [False, False, None]
+        return sent
+
+    messageparts = message.split("\n")
+    newMessage = ' '.join(messageparts[1:])
+
+    r = requests.post('https://hooks.slack.com/services/{0}'.format("T027F3GAJ/BQRHC3L9L/w18tJnR4ZFEB5SGL8nvO94pf"), headers={'Content-type':'application/json'}, data='{"text": {0}}'.format(newMessage))
+    if r.status_code == 200:
+        sent[1] = True
+
+    return sent
+
 
 @app.route('/', methods=['GET'])
 def home_get():
