@@ -99,7 +99,7 @@ def format_response(event):
         text = 'Thanks for adding me to a DM, {}!'.format(sender_name)
 
     elif event_type == 'MESSAGE':
-        sent = slackOrIRC(event['message']['text'], event['message']['displayName'])
+        sent = slackOrIRC(event['message']['text'], event['message']['sender']['displayName'])
         if sent[0]:
             if sent[1]:
                 text = 'Thanks for engaging! Your message to {0} has been sent successfully!'.format(sent[2])
