@@ -52,14 +52,14 @@ def home_post():
     # to the space. Instead, log a message showing that the bot was removed.
     if event_data['type'] == 'REMOVED_FROM_SPACE':
         logging.info('Bot removed from  %s', event_data['space']['name'])
-        return json.loads({})
+        return json.dumps({})
 
     resp = format_response(event_data)
     space_name = event_data['space']['name']
     send_async_response(resp, space_name)
 
     # Return empty jsom respomse simce message already sent via REST API
-    return json.loads({})
+    return json.dumps({})
 
 # [START async-response]
 
