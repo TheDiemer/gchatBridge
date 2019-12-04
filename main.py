@@ -120,7 +120,7 @@ def format_response(event):
 # [END async-bot]
 
 
-def slackOrIrc(message):
+def slackOrIRC(message):
     # We will send back a list called sent
     # sent = [Bool1, Bool2, String]
     # Bool1 = Whether they specified irc or slack
