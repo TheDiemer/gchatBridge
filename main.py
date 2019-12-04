@@ -25,6 +25,7 @@ from googleapiclient.discovery import build
 from flask import Flask, render_template, request, json
 import google.auth
 import requests
+import json
 
 app = Flask(__name__)
 
@@ -136,8 +137,9 @@ def slackOrIRC(message):
 
     messageparts = message.split("\n")
     newMessage = ' '.join(messageparts[1:])
+    data = { "text": newMessage}
 
-    r = requests.post('https://hooks.slack.com/services/{0}'.format("T027F3GAJ/BQRHC3L9L/w18tJnR4ZFEB5SGL8nvO94pf"), headers={'Content-type':'application/json'}, data='{"text": {0}}'.format(newMessage))
+    r = requests.post('https://hooks.slack.com/services/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', headers={'Content-type':'application/json'}, data=json.dumps(data))
     if r.status_code == 200:
         sent[1] = True
 
