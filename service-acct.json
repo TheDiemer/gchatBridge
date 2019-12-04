@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "EXAMPLE",
+  "private_key_id": "EXAMPLE",
+  "private_key": "EXAMPLE",
+  "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDTeaNpj2XJbHFh\nupG9RrnSdbYbDt2Dd0Hn85MRQwYDK/iU73lugiFTHT5zVDTw9Zb2PkPS/m8nIHyR\nxzno0zsAy7MMiE7+lIddxYCKmbPJ8CHmDtBva9kL5wKoZKI4udMYakkw+JWxHCFC\nQn9I5b/GebTuEq4QWbZ+d1GmK8vr4vbuaRgsGIP3na2X9UTXiGJZwVqm2POiPu6e\nBOry5AcMC5w0GmgXry+FVlD7ktiLw6RVkEn6E9FsSsaQT8ypmJ4E++aESTEtcXNZ\nwvcwzeSVdNrNLs+OJBZuB9ztx5uTEZDoUP77H93sv5psp86hM4niMfqn5QwB9PB2\njEvOaHq3AgMBAAECggEAD3gkZgJhVbyjBp0ZMBlOWoDV02Dg/07n+UmuBmM6u1yq\nEGr8HQNT4LqQ6OrN/JpacqTXXUXTZ69OrXM/XzKkbEh6Tn5iGOlQhaF+56SarDju\nod+Pi7b954r8fMjvvOqK8IxF0lk8yfnezPQET5bO0nvwqkGfjf6iBNpBlMA7aIPN\nq5pDOwR6Gn5DbdyEu2rgCd6Bd/9L087gSehomYNDoKML1zAUGCUk5Lx9CQDvjSkJ\n0GcgN9E/3d1Hh6Ybsjosno7inp9kgN9DXfKimJnWJCUyWHWOq7A0J1kIczeI+L6F\npGRqEVm0EAdt67wiGk0m/Rcie1sVoUW7f3TmjD2hAQKBgQD0TXy2IoU/2djtNMGz\nHyMJX2dddfyvCVcEnzWRlMa55SFrV6BmK+K+Ktd6YSAudWcFFnxGiMLIneq3EJkd\nkaSOw2uVucCKptNllPBCR2rqqEbQ3rTA1ZqO3gekzFHN9vmsf6iuQ2quu27GrLry\nZdIVYK9Dx4cYHo40xlnruZf7wQKBgQDdmcV2lNu5OWkDqjnyDrYeF19B8Xyw8MPP\nd5BPVSaIN8DVbYP6buIRWLZ+ToO5CMRF4m6nVJ2ggnxlGmEsCCdioL/HXZjS8MoK\n7WgyqAB3hkKEqc85RIFr0YNGG7GZ507EUefxkjutVoJilg6C0SeAIlhWaOF6VKS+\nMB9CAm90dwKBgAuW5XSqfJHD3uOZ3hqGPp5CNWAcqckP813Xw63NVgQZl5VFCenu\n6QnGdIRsuR8bGLEIGQsrj7n+q9TVZ74cW6ceJCttLXImad7myuMKCktpgjqEZiTD\nvVpLtCcgPj08GyoQwErMDfKOF7o7FX9MT0QOWyInBASj5nEge8GQA2LBAoGAKnnZ\nIbuyyjQ47tzoMn+jZO0x8x/ouLnNrqzKWoqF0kJtkftl+tDaQFzyzg8arJMDnCmk\n8CoF9MhOM8r0qU3+zqblW7+TFYvWDnYnLN6LCF4RzgAGmoGJFTOZqAyS5F8z9+mD\nPgi7q6QTZfZBXc3ddnAe4qFD5wDmexYaR7rTxk0CgYB1SjSbUknviy5xSh9EuPIv\n9bnineAYhgdhrcDVF/F/YrJFwbJxUIdVUi+lZAhXeU+foZ3GL6rlAaPGOVJIdlIL\najGPbY9S0C5yrSjb6mcC1YrBX1ZTZc8nU4z14/MXVaHCsCfNGIbMPhw1sik5fGYH\n0HR96g/OJNqFEQOGHxYDOg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "EXAMPLE@test.example.com",
+  "client_id": "EXAMPLE",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "EXAMPLE"
+}
