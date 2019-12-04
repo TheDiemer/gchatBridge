@@ -1,2 +1,2 @@
 #!/bin/bash
-GOOGLE_APPLICATION_CREDENTIALS=service-acct.json python main.py
+GOOGLE_APPLICATION_CREDENTIALS=/opt/app-root/src/account/account python main.py
