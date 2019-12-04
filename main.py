@@ -99,7 +99,7 @@ def format_response(event):
         text = 'Thanks for adding me to a DM, {}!'.format(sender_name)
 
     elif event_type == 'MESSAGE':
-        sent = slackOrIRC(event['message']['text'])
+        sent = slackOrIRC(event['message']['text'], event['message']['displayName'])
         if sent[0]:
             if sent[1]:
                 text = 'Thanks for engaging! Your message to {0} has been sent successfully!'.format(sent[2])
@@ -121,7 +121,7 @@ def format_response(event):
 # [END async-bot]
 
 
-def slackOrIRC(message):
+def slackOrIRC(message, sender):
     # We will send back a list called sent
     # sent = [Bool1, Bool2, String]
     # Bool1 = Whether they specified irc or slack
@@ -137,8 +137,12 @@ def slackOrIRC(message):
 
     messageparts = message.split("\n")
     newMessage = ' '.join(messageparts[1:])
-    print(newMessage)
-    data = {"text": newMessage}
+
+    if sent[2] == "irc":
+        msg = "<@UFGCLPLUU> irc\n{0} said: {1}".format(sender, newMessage)
+    else:
+        msg = "@sre-ic {0} said: {1}".format(sender, newMessage)
+    data = {"text": msg}
 
     r = requests.post('https://hooks.slack.com/services/' + 'T027F3GAJ/BQNCN3G3W/VnrFHebh0mDUpPPWqkhuuh7n', headers={'Content-type':'application/json'}, data=json.dumps(data))
     if r.status_code == 200:
