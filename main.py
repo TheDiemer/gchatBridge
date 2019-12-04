@@ -141,6 +141,7 @@ def slackOrIRC(message):
     data = {"text": newMessage}
 
     r = requests.post('https://hooks.slack.com/services/' + 'T027F3GAJ/BQNCN3G3W/VnrFHebh0mDUpPPWqkhuuh7n', headers={'Content-type':'application/json'}, data=json.dumps(data))
+    print("\n\n{0}, with message: {1}\n".format(r.status_code, r.text))
     if r.status_code == 200:
         sent[1] = True
 
