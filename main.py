@@ -139,7 +139,7 @@ def slackOrIRC(message, sender):
     newMessage = ' '.join(messageparts[1:])
 
     if sent[2] == "irc":
-        msg = "<@UFGCLPLUU> irc\n{0} said: {1}".format(sender, newMessage)
+        msg = "<@UQBA90P1R> irc\n{0} said: {1}".format(sender, newMessage)
     else:
         msg = "@sre-ic {0} said: {1}".format(sender, newMessage)
     data = {"text": msg}
